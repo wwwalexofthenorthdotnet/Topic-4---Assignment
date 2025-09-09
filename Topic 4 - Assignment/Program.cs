@@ -6,7 +6,7 @@
         {
             string name, firstName, lastName, login, userName, itemName1, itemName2;
             int grade, studentID, age, age2;
-            double average, salary, value1, value2, itemPrice1, itemPrice2;
+            double average, salary, value1, value2, itemPrice1, itemPrice2, subTotal, discount, taxCost;
             const double tax = 0.13;
 
 
@@ -78,13 +78,13 @@
             Console.WriteLine("Item 2: \t" + itemName2);
             Console.WriteLine("Price: \t\t" + itemPrice2 .ToString("C"));
             Console.WriteLine("==================");
-            Console.WriteLine("Subtotal: \t" + (itemPrice1 + itemPrice2) .ToString("C"));
-            Console.WriteLine("Discount (20%): " + ((itemPrice1 + itemPrice2) * 0.2).ToString("C"));
-            Console.WriteLine("Tax: \t" + ((itemPrice1 + itemPrice2) * 0.2 * tax) .ToString("C"));
-            Console.WriteLine("Total: \t\t" + ((itemPrice1 + itemPrice2) - (((itemPrice1 + itemPrice2) * 0.2))  + ((itemPrice1 + itemPrice2) - ((itemPrice1 + itemPrice2) * 0.2)) * tax));
-
-
-
+            subTotal = itemPrice1 + itemPrice2;
+            discount = (itemPrice1 + itemPrice2) * 0.2;
+            taxCost = (itemPrice1 + itemPrice2 - discount) * tax;
+            Console.WriteLine("Subtotal: \t" + subTotal .ToString("C"));
+            Console.WriteLine("Discount (20%): " + discount .ToString("C"));
+            Console.WriteLine("Tax: \t\t" + taxCost .ToString("C"));
+            Console.WriteLine("Total: \t\t" + (subTotal - discount + taxCost) .ToString("C"));
         }
     }
 }
