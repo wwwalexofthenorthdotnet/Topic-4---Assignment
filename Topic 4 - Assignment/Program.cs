@@ -85,6 +85,8 @@
             Console.WriteLine("Discount (20%): " + discount .ToString("C"));
             Console.WriteLine("Tax: \t\t" + taxCost .ToString("C"));
             Console.WriteLine("Total: \t\t" + (subTotal - discount + taxCost) .ToString("C"));
+
+            Console.ReadLine();
         }
     }
 }
